@@ -1,0 +1,159 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for the header and menu */
+header {
+  background-color: #333;
+  padding: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.menu-links {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-links li {
+  list-style: none;
+  padding: 0 15px;
+}
+
+.menu-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.menu-links a:hover {
+  color: #f00;
+}
+
+/* Styles for mobile navigation */
+@media screen and (max-width: 768px) {
+  .menu-links {
+    display: none; /* Hide the links for smaller screens */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #444;
+    border-bottom: 1px solid #333;
+    z-index: 1;
+  }
+
+  .menu-links.active {
+    display: flex; /* Show the links when the menu is active */
+  }
+
+  .menu-toggle {
+    display: block; /* Show the menu toggle for smaller screens */
+  }
+
+  /* Styles for the hamburger icon */
+  .hamburger {
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    margin: 6px 0;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    left: 0;
+    transition: transform 0.3s;
+  }
+
+  .hamburger::before {
+    top: -8px;
+  }
+
+  .hamburger::after {
+    bottom: -8px;
+  }
+
+  /* Styles for the hamburger icon animation when the menu is active */
+  .menu-links.active .hamburger {
+    background-color: transparent;
+  }
+
+  .menu-links.active .hamburger::before {
+    transform: rotate(45deg) translate(6px, 6px);
+    top: 0;
+  }
+
+  .menu-links.active .hamburger::after {
+    transform: rotate(-45deg) translate(6px, -6px);
+    bottom: 0;
+  }
+
+  /* Adjust menu alignment on mobile */
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-logo {
+    margin-bottom: 10px;
+  }
+
+  .menu-links li {
+    padding: 10px 15px;
+  }
+}
+
+
+
+
+
+
+main {
+  padding: 20px;
+}
+
+section {
+  display: none; /* Hide all sections by default */
+}
+
+section.active {
+  display: block; /* Show the active section */
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* New CSS for Image Gallery */
+.gallery {
+  max-width: 800px; /* Set a maximum width for the gallery */
+  margin: 0 auto; /* Center the gallery */
+  overflow: hidden; /* Hide overflowing content */
+}
+
